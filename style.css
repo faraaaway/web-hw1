@@ -1,3 +1,18 @@
+:root {
+  --bg: #141e30;
+  --surface: #1f2b44;
+  --text: #f5f5f7;
+  --accent: #4da3ff;
+  --warn: #ff5a5f;
+  --font-title: "Black Han Sans", sans-serif;
+  --font-body: "Noto Sans KR", sans-serif;
+  --gap: 20px;
+  --grad: #243b55;
+  --white: #fff;
+  --black: #222;
+  --badge: #ffc107;
+}
+
 @keyframes pulse {
   0%,
   100% {
@@ -15,18 +30,18 @@
 }
 
 body {
-  background: linear-gradient(135deg, #141e30, #243b55);
+  background: linear-gradient(135deg, var(--bg), var(--grad));
   min-height: 100vh;
   box-sizing: border-box;
   margin: 0;
   padding: 16px;
-  color: #f5f5f5;
+  color: var(--text);
   font-family: "Noto Sans KR", sans-serif;
 }
 
 h1,
 footer {
-  color: #fff;
+  color: var(--white);
 }
 
 .card {
@@ -34,8 +49,8 @@ footer {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  background: #fff;
-  color: #222;
+  background: var(--white);
+  color: var(--black);
 
   position: relative;
   transition:
@@ -60,6 +75,16 @@ footer {
   box-shadow: 0 12px 32px rgba(255, 193, 7, 0.6);
 }
 
+.card.no-poster .poster-fallback {
+  aspect-ratio: 2 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  font-family: var(--font-title);
+  background: linear-gradient(135deg, var(--accent), var(--surface));
+}
+
 .hero {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
@@ -69,7 +94,7 @@ footer {
   min-height: 40vh;
   padding: 24px;
   box-sizing: border-box;
-  color: #fff;
+  color: var(--white);
   border-radius: 12px;
   display: flex;
   flex-direction: column;
@@ -78,7 +103,8 @@ footer {
 
 .board {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
 }
 
@@ -97,12 +123,37 @@ footer {
   position: absolute;
   top: 12px;
   right: 12px;
-  background: #ffc107;
-  color: #222;
+  background: var(--badge);
+  color: var(--black);
   padding: 4px 10px;
   border-radius: 999px;
   font-weight: bold;
   animation: pulse 2s infinite;
+}
+
+.rank {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--warn);
+  color: var(--white);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: bold;
+  animation: pulse 2s infinite;
+}
+
+.change.up::before {
+  content: "▲";
+  color: var(--warn);
+}
+.change.down::before {
+  content: "▼";
+  color: var(--accent);
+}
+.change.new::before {
+  content: "NEW";
+  color: var(--warn);
 }
 
 .top {
@@ -121,7 +172,7 @@ nav ul {
 }
 
 nav a {
-  color: #fff;
+  color: var(--white);
   text-decoration: none;
 }
 
@@ -149,9 +200,9 @@ footer {
   }
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .card {
     background: #1f2429;
     color: #eee;
   }
-}
+} */

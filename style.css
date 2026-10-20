@@ -11,6 +11,10 @@
   --white: #fff;
   --black: #222;
   --badge: #ffc107;
+  --card-shadow: rgba(0, 0, 0, 0.3);
+  --card-hover: rgba(255, 193, 7, 0.6);
+  --hero-gradient: rgba(0, 0, 0, 0.6);
+  --detail-gradient: rgba(0, 0, 0, 0.75);
 }
 
 @keyframes pulse {
@@ -48,7 +52,7 @@ footer {
   animation: rise 0.6s backwards;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px var(--card-shadow);
   background: var(--white);
   color: var(--black);
 
@@ -72,7 +76,7 @@ footer {
 
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 32px rgba(255, 193, 7, 0.6);
+  box-shadow: 0 12px 32px var(--card-hover);
 }
 
 .card.no-poster .poster-fallback {
@@ -87,7 +91,7 @@ footer {
 
 .hero {
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    linear-gradient(var(--hero-gradient), var(--hero-gradient)),
     url("https://image.tmdb.org/t/p/w1280/u2oRQqUashBBIj5UNeOd5TN0bmB.jpg");
   background-size: cover;
   background-position: center;
@@ -184,10 +188,34 @@ footer {
   margin: 0 auto 24px;
 }
 
+article dt {
+  color: var(--accent);
+}
+
+.detail {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+}
+
+.detail-page {
+  background-image:
+    linear-gradient(var(--detail-gradient), var(--detail-gradient)),
+    url("https://image.tmdb.org/t/p/w1280/2lBOQK06tltt8SQaswgb8d657Mv.jpg");
+  background-size: cover;
+  min-height: 100vh;
+}
+
 @media (min-width: 600px) {
   nav ul {
     flex-direction: row;
     gap: 20px;
+  }
+  .detail {
+    grid-template-columns: 1fr 2fr;
+  }
+  .detail img {
+    width: 100%;
   }
 }
 

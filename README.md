@@ -1,6 +1,6 @@
 # 실습과제 #1 : 영화 보드 완성판
 - 이름 / 학번 : 장성민 / 2351044
-- 사이트 주소 : [https://아이디.github.io/web-hw1/](https://faraaaway.github.io/web-hw1/)
+- 사이트 주소 : [https://faraaaway.github.io/web-hw1/](https://faraaaway.github.io/web-hw1/)
 - 사용한 API 1 : TMDB (포스터, 영화 정보)
 - 사용한 API 2 : KOBIS 일별 박스오피스 (기준일 2026-10-20)
 ## 구현 항목 체크

@@ -35,7 +35,14 @@
 
         <img
           class="poster"
-          src="https://image.tmdb.org/t/p/w500/u2oRQqUashBBIj5UNeOd5TN0bmB.jpg"
+          srcset="
+            https://image.tmdb.org/t/p/w342/u2oRQqUashBBIj5UNeOd5TN0bmB.jpg 342w,
+            https://image.tmdb.org/t/p/w500/u2oRQqUashBBIj5UNeOd5TN0bmB.jpg 500w,
+            https://image.tmdb.org/t/p/w780/u2oRQqUashBBIj5UNeOd5TN0bmB.jpg 780w
+          "
+          sizes="(max-width: 360px) 342px,
+         (max-width: 768px) 500px,
+         780px"
           alt="제목 포스터"
         />
         <!--영화 정보 -->
